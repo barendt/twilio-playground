@@ -1,4 +1,4 @@
-class TwillioController < ApplicationController
+class TwilioController < ApplicationController
   def index
     render text: 'here'
   end
