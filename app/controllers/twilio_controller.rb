@@ -9,7 +9,7 @@ class TwilioController < ApplicationController
       end
     end
 
-    render text: response.text
+    render plain: response.text
   end
 
   def selection
@@ -32,6 +32,6 @@ class TwilioController < ApplicationController
         end
       end
 
-      render text: response.text
+      render plain: response.text
     end
 end
