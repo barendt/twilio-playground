@@ -1,4 +1,6 @@
 class TwilioController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def index
     response = Twilio::TwiML::Response.new do |r|
       r.Say 'Hello.'
