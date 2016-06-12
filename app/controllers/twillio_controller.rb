@@ -3,7 +3,7 @@ class TwilioController < ApplicationController
     response = Twilio::TwiML::Response.new do |r|
       r.Say 'Hello.'
       r.Gather numDigits: '1', action: selection_path do |g|
-        g.Say 'Thank you for entering a number.'
+        g.Say 'Please enter a number'
       end
     end
 
