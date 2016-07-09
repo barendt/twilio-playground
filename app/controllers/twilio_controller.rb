@@ -3,9 +3,9 @@ class TwilioController < ApplicationController
 
   def index
     response = Twilio::TwiML::Response.new do |r|
-      r.Say 'Hello.'
+      r.Say 'Hello, Heather.'
       r.Gather numDigits: '1', action: selection_path do |g|
-        g.Say 'Please enter a number'
+        g.Say 'Please enter a number, Heather.'
       end
     end
 
@@ -24,8 +24,7 @@ class TwilioController < ApplicationController
       response = Twilio::TwiML::Response.new do |r|
         r.Say phrase, voice: 'alice', language: 'en-GB'
         if exit 
-          r.Say "Thank you for calling the ET Phone Home Service - the
-          adventurous alien's first choice in intergalactic travel."
+          r.Say "Thank you for calling, Heather."
           r.Hangup
         else
           r.Redirect welcome_path
